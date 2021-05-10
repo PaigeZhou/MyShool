@@ -24,7 +24,7 @@ namespace MyShool
         /// <param name="e"></param>
         private void Frmmain_Load(object sender, EventArgs e)
         {
-            Text = "欢迎您," + Frmlogin.main.userId;
+           // Text = "欢迎您," + Frmlogin.main.userId;
         }
 
         /// <summary>
@@ -47,6 +47,18 @@ namespace MyShool
             FrmAddstu frm = new FrmAddstu();
             frm.MdiParent = this;//设置frmaddstu窗口为当前窗口
             frm.Show();
+        }
+
+        /// <summary>
+        /// 按姓名查询学生列表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsbtncxbyname_Click(object sender, EventArgs e)
+        {
+            Frmstulist cx = new Frmstulist();
+            cx.MdiParent = this;
+            cx.Show();
         }
     }
 }

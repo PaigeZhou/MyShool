@@ -32,7 +32,7 @@ namespace MyShool
         /// </summary>
         private void GradeInformation()
         {
-            string sql = "SELECT GradeId,GradeName FROM [dbo]. [Grade] UNION SELECT '0' ,'请选择年级'";
+            string sql = "SELECT * FROM [dbo]. [Grade] UNION SELECT 0 ,'请选择年级'";
             DataTable res = DBHelper.GetTable(sql);
             cbograde.DisplayMember = "GradeName";
             cbograde.ValueMember = "GradeId";

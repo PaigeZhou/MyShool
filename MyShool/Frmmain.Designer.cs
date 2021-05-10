@@ -42,10 +42,10 @@ namespace MyShool
             this.mskmgl = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmixzkm = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmikmlb = new System.Windows.Forms.ToolStripMenuItem();
+            this.msck = new System.Windows.Forms.ToolStripMenuItem();
             this.mshelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmime = new System.Windows.Forms.ToolStripMenuItem();
             this.tszcd = new System.Windows.Forms.ToolStrip();
-            this.msck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbtnaddstu = new System.Windows.Forms.ToolStripButton();
             this.tsbtncxbyname = new System.Windows.Forms.ToolStripButton();
             this.tsbtncxbyage = new System.Windows.Forms.ToolStripButton();
@@ -85,19 +85,19 @@ namespace MyShool
             // 
             this.tsmixgmm.Image = global::MyShool.Properties.Resources.tsbtn4;
             this.tsmixgmm.Name = "tsmixgmm";
-            this.tsmixgmm.Size = new System.Drawing.Size(224, 26);
+            this.tsmixgmm.Size = new System.Drawing.Size(197, 26);
             this.tsmixgmm.Text = "修改密码（&M）";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(194, 6);
             // 
             // tsmitc
             // 
             this.tsmitc.Image = global::MyShool.Properties.Resources.tsbtn3;
             this.tsmitc.Name = "tsmitc";
-            this.tsmitc.Size = new System.Drawing.Size(224, 26);
+            this.tsmitc.Size = new System.Drawing.Size(197, 26);
             this.tsmitc.Text = "退出（&E）";
             this.tsmitc.Click += new System.EventHandler(this.tsmitc_Click);
             // 
@@ -115,26 +115,26 @@ namespace MyShool
             // tsmixzxs
             // 
             this.tsmixzxs.Name = "tsmixzxs";
-            this.tsmixzxs.Size = new System.Drawing.Size(224, 26);
+            this.tsmixzxs.Size = new System.Drawing.Size(212, 26);
             this.tsmixzxs.Text = "新增学生（&N）";
             this.tsmixzxs.Click += new System.EventHandler(this.tsmixzxs_Click);
             // 
             // tsmisrbyxm
             // 
             this.tsmisrbyxm.Name = "tsmisrbyxm";
-            this.tsmisrbyxm.Size = new System.Drawing.Size(224, 26);
+            this.tsmisrbyxm.Size = new System.Drawing.Size(212, 26);
             this.tsmisrbyxm.Text = "按姓名输入（&M）";
             // 
             // tsmicxbybj
             // 
             this.tsmicxbybj.Name = "tsmicxbybj";
-            this.tsmicxbybj.Size = new System.Drawing.Size(224, 26);
+            this.tsmicxbybj.Size = new System.Drawing.Size(212, 26);
             this.tsmicxbybj.Text = "按年级查询（&G）";
             // 
             // tsmixslb
             // 
             this.tsmixslb.Name = "tsmixslb";
-            this.tsmixslb.Size = new System.Drawing.Size(224, 26);
+            this.tsmixslb.Size = new System.Drawing.Size(212, 26);
             this.tsmixslb.Text = "学生列表（&L）";
             // 
             // mskmgl
@@ -149,14 +149,20 @@ namespace MyShool
             // tsmixzkm
             // 
             this.tsmixzkm.Name = "tsmixzkm";
-            this.tsmixzkm.Size = new System.Drawing.Size(224, 26);
+            this.tsmixzkm.Size = new System.Drawing.Size(193, 26);
             this.tsmixzkm.Text = "新增科目（&A）";
             // 
             // tsmikmlb
             // 
             this.tsmikmlb.Name = "tsmikmlb";
-            this.tsmikmlb.Size = new System.Drawing.Size(224, 26);
+            this.tsmikmlb.Size = new System.Drawing.Size(193, 26);
             this.tsmikmlb.Text = "科目列表（&L）";
+            // 
+            // msck
+            // 
+            this.msck.Name = "msck";
+            this.msck.Size = new System.Drawing.Size(98, 24);
+            this.msck.Text = "窗口（&W）";
             // 
             // mshelp
             // 
@@ -169,7 +175,7 @@ namespace MyShool
             // tsmime
             // 
             this.tsmime.Name = "tsmime";
-            this.tsmime.Size = new System.Drawing.Size(224, 26);
+            this.tsmime.Size = new System.Drawing.Size(193, 26);
             this.tsmime.Text = "关于我们（&A）";
             // 
             // tszcd
@@ -188,12 +194,6 @@ namespace MyShool
             this.tszcd.TabIndex = 1;
             this.tszcd.Text = "toolStrip1";
             // 
-            // msck
-            // 
-            this.msck.Name = "msck";
-            this.msck.Size = new System.Drawing.Size(98, 24);
-            this.msck.Text = "窗口（&W）";
-            // 
             // tsbtnaddstu
             // 
             this.tsbtnaddstu.Image = global::MyShool.Properties.Resources.tsbtn5;
@@ -210,6 +210,7 @@ namespace MyShool
             this.tsbtncxbyname.Name = "tsbtncxbyname";
             this.tsbtncxbyname.Size = new System.Drawing.Size(143, 29);
             this.tsbtncxbyname.Text = "按姓名查询学生";
+            this.tsbtncxbyname.Click += new System.EventHandler(this.tsbtncxbyname_Click);
             // 
             // tsbtncxbyage
             // 
