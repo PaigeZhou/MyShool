@@ -50,7 +50,7 @@ namespace MyShool
         }
 
         /// <summary>
-        /// 按姓名查询学生列表
+        /// 按名字查询学生列表
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -59,6 +59,37 @@ namespace MyShool
             Frmstulist cx = new Frmstulist();
             cx.MdiParent = this;
             cx.Show();
+        }
+
+        /// <summary>
+        /// 关于我们
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmime_Click(object sender, EventArgs e)
+        {
+            Frmaboutours frmaboutours = new Frmaboutours();
+            frmaboutours.ShowDialog();
+        }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmixgmm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 按年级查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmicxbybj_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

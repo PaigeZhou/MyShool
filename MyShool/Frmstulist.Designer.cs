@@ -29,6 +29,7 @@ namespace MyShool
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblname = new System.Windows.Forms.Label();
             this.lblmhcx = new System.Windows.Forms.Label();
             this.txtname = new System.Windows.Forms.TextBox();
@@ -40,6 +41,11 @@ namespace MyShool
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmsstulist = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiselect = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmidelect = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsstulist.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblname
@@ -88,6 +94,7 @@ namespace MyShool
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
+            this.lvstulist.ContextMenuStrip = this.cmsstulist;
             this.lvstulist.FullRowSelect = true;
             this.lvstulist.GridLines = true;
             this.lvstulist.HideSelection = false;
@@ -127,6 +134,35 @@ namespace MyShool
             this.columnHeader6.Text = "家庭住址";
             this.columnHeader6.Width = 449;
             // 
+            // cmsstulist
+            // 
+            this.cmsstulist.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsstulist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiselect,
+            this.toolStripSeparator1,
+            this.tsmidelect});
+            this.cmsstulist.Name = "cmsstulist";
+            this.cmsstulist.Size = new System.Drawing.Size(109, 58);
+            // 
+            // tsmiselect
+            // 
+            this.tsmiselect.Name = "tsmiselect";
+            this.tsmiselect.Size = new System.Drawing.Size(108, 24);
+            this.tsmiselect.Text = "修改";
+            this.tsmiselect.Click += new System.EventHandler(this.tsmiselect_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(105, 6);
+            // 
+            // tsmidelect
+            // 
+            this.tsmidelect.Name = "tsmidelect";
+            this.tsmidelect.Size = new System.Drawing.Size(108, 24);
+            this.tsmidelect.Text = "删除";
+            this.tsmidelect.Click += new System.EventHandler(this.tsmidelect_Click);
+            // 
             // Frmstulist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -140,6 +176,7 @@ namespace MyShool
             this.Name = "Frmstulist";
             this.Text = "学生信息列表";
             this.Load += new System.EventHandler(this.Frmstulist_Load);
+            this.cmsstulist.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +195,9 @@ namespace MyShool
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ContextMenuStrip cmsstulist;
+        private System.Windows.Forms.ToolStripMenuItem tsmiselect;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem tsmidelect;
     }
 }

@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace MyShool
 {
     public partial class FrmAddstu : Form
     {
+        /// <summary>
+        /// 声明一个变量，接受查询页面的学号
+        /// </summary>
+        public string EditStuno = string.Empty;
         public FrmAddstu()
         {
             InitializeComponent();
@@ -25,6 +30,7 @@ namespace MyShool
         private void FrmAddstu_Load(object sender, EventArgs e)
         {
             GradeInformation();
+            xg();
         }
 
         /// <summary>
@@ -99,11 +105,6 @@ namespace MyShool
                 return false;
             }
 
-            if (string.IsNullOrEmpty(email))
-            {
-                MessageBox.Show("邮箱不能为空", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
             if (string.IsNullOrEmpty(dh))
             {
                 MessageBox.Show("电话不能为空", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -138,9 +139,21 @@ namespace MyShool
         /// <param name="e"></param>
         private void btnbc_Click(object sender, EventArgs e)
         {
-            if (checkinput() && checkstuxh())
+            if (checkinput())
             {
-                preserva();
+                if (txtxh.ReadOnly == true)
+                {
+                    xgcz();
+                }
+                else
+                {
+                     if (checkstuxh())
+                     {
+                         preserva();
+                      }
+                }
+
+               
             }
         }
 
@@ -197,6 +210,61 @@ namespace MyShool
             txtaddress.Clear();
             dtpcsrq.Value = DateTime.Now;
             txtemail.Clear();
+        }
+
+        /// <summary>
+        /// 修改
+        /// </summary>
+        public void xg()
+        {
+            txtxh.Text = EditStuno;
+            if (!string.IsNullOrEmpty(txtxh.Text))
+            {
+                txtxh.ReadOnly = true;
+            }
+            string sql = string.Format("SELECT LoginPwd, StudentName, Sex, GradeId, Phone, Address, BornDate, Email FROM Student WHERE StudentNo = '{0}'",txtxh.Text);
+            SqlDataReader r = DBHelper.ExecuteReader(sql);
+            if(r!=null && r.Read() && r.HasRows) { 
+            txtmm.Text = r["LoginPwd"].ToString();
+            txtqrmm.Text = r["LoginPwd"].ToString();
+            txtname.Text = r["StudentName"].ToString();
+            txtphone.Text = r["Phone"].ToString();
+            txtaddress.Text = r["Address"].ToString();
+            txtemail.Text = r["Email"].ToString();
+            if (r["Sex"].ToString().Equals("男"))
+                rbtnman.Checked = true;
+            else
+                rbtnwomen.Checked = true;
+            cbograde.SelectedValue = Convert.ToInt32(r["GradeId"]);
+            dtpcsrq.Value = Convert.ToDateTime(r["BornDate"]);
+            }
+
+        }
+
+        /// <summary>
+        /// 修改操作
+        /// </summary>
+       public void xgcz()
+        {
+            string xh = txtxh.Text;
+            string pwd = txtmm.Text;
+            string mz = txtname.Text;
+            string xb = rbtnman.Checked ? "男" : "女";//拿到性别
+            int grade = Convert.ToInt32(cbograde.SelectedValue);//拿到年级
+            string dh = txtphone.Text;
+            string dz = txtaddress.Text;//拿到地址
+            string sj = dtpcsrq.Value.ToString("yyyy-MM-dd");//拿到出生日期
+            string email = txtemail.Text;
+            string sql = string.Format("UPDATE Student SET LoginPwd='{0}',StudentName='{1}', Sex='{2}', GradeId='{3}', Phone='{4}', Address='{5}', BornDate='{6}', Email='{7}'where StudentNo='{8}'", pwd, mz, xb, grade, dh, dz, sj, email, xh);
+            bool res = DBHelper.ExecuteNonQuery(sql);
+            if (res)
+            {
+                if (Frmstulist.frmstulist != null)
+                {
+                    Frmstulist.frmstulist.cx();
+                    MessageBox.Show("修改成功！");
+                }
+            }
         }
     }
 }

@@ -344,7 +344,6 @@ namespace MyShool
         private System.Windows.Forms.GroupBox gbojbxx;
         private System.Windows.Forms.TextBox txtqrmm;
         private System.Windows.Forms.TextBox txtmm;
-        private System.Windows.Forms.TextBox txtxh;
         private System.Windows.Forms.Label lblqrzcmm;
         private System.Windows.Forms.Label lblzcmm;
         private System.Windows.Forms.Label lblzcxh;
@@ -366,5 +365,6 @@ namespace MyShool
         private System.Windows.Forms.Button btnbc;
         private System.Windows.Forms.Button btnqx;
         private System.Windows.Forms.Panel plxb;
+        private System.Windows.Forms.TextBox txtxh;
     }
 }

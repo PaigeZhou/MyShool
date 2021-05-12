@@ -13,9 +13,11 @@ namespace MyShool
 {
     public partial class Frmstulist : Form
     {
+        public static Frmstulist frmstulist;
         public Frmstulist()
         {
             InitializeComponent();
+            frmstulist = this;
         }
 
         /// <summary>
@@ -26,6 +28,7 @@ namespace MyShool
         private void Frmstulist_Load(object sender, EventArgs e)
         {
             cx();
+
         }
 
         /// <summary>
@@ -69,5 +72,52 @@ namespace MyShool
             }
         }
 
+        /// <summary>
+        /// 执行修改操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmiselect_Click(object sender, EventArgs e)
+        {
+            if (lvstulist.SelectedItems.Count > 0)
+            {
+                string xh = lvstulist.SelectedItems[0].SubItems[0].Text;
+                FrmAddstu frm = new FrmAddstu();
+                frm.EditStuno= xh;
+                frm.ShowDialog();
+                 
+            }
+            else
+            {
+                MessageBox.Show("请选择您要进行修改的学员！", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        /// <summary>
+        /// 执行删除操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmidelect_Click(object sender, EventArgs e)
+        {
+            if (lvstulist.SelectedItems.Count > 0)
+            {
+                MessageBox.Show("是否删除此学员","提示",MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
+                string xh = lvstulist.SelectedItems[0].SubItems[0].Text;
+                string sql = string.Format("DELETE FROM [dbo].[Result] WHERE [StudentNo]='{0}'", xh);
+                bool res = DBHelper.ExecuteNonQuery(sql);
+                if (res)
+                {
+                    string sql1 = string.Format("DELETE FROM [dbo].[Student] WHERE [StudentNo]='{0}'",xh);
+                    bool res1 = DBHelper.ExecuteNonQuery(sql1);
+                    if (res1)
+                    {
+                        cx();
+                        MessageBox.Show("删除学员成功！","提示",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                }
+                
+            }
+        }
     }
 }

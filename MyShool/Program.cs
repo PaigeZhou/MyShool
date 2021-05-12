@@ -16,7 +16,7 @@ namespace MyShool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frmdome());
+            Application.Run(new Frmmain());
         }
     }
 }
