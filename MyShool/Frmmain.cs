@@ -89,7 +89,8 @@ namespace MyShool
         /// <param name="e"></param>
         private void tsmicxbybj_Click(object sender, EventArgs e)
         {
-
+            Frmselectbygrade frm = new Frmselectbygrade();
+            frm.ShowDialog();
         }
     }
 }

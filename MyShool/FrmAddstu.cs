@@ -110,6 +110,12 @@ namespace MyShool
                 MessageBox.Show("电话不能为空", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
+
+            if (string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("邮箱不能为空", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
             return true;
 
 
@@ -259,10 +265,16 @@ namespace MyShool
             bool res = DBHelper.ExecuteNonQuery(sql);
             if (res)
             {
+                if (Frmselectbygrade.frmselectbygrade != null)
+                {
+                    Frmselectbygrade.frmselectbygrade.Selectstu();
+                    MessageBox.Show("修改成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
                 if (Frmstulist.frmstulist != null)
                 {
                     Frmstulist.frmstulist.cx();
-                    MessageBox.Show("修改成功！");
+                    MessageBox.Show("修改成功！","提示",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
         }

@@ -76,7 +76,7 @@ namespace MyShool
         /// 执行修改操作
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="e"></param>1
         private void tsmiselect_Click(object sender, EventArgs e)
         {
             if (lvstulist.SelectedItems.Count > 0)
@@ -114,6 +114,10 @@ namespace MyShool
                     {
                         cx();
                         MessageBox.Show("删除学员成功！","提示",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("删除学员失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 

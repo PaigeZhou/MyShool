@@ -53,6 +53,12 @@
     <Compile Include="Frmaboutours.Designer.cs">
       <DependentUpon>Frmaboutours.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frmaddresult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmaddresult.Designer.cs">
+      <DependentUpon>Frmaddresult.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddstu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,11 +83,11 @@
     <Compile Include="Frmmain.Designer.cs">
       <DependentUpon>Frmmain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frmselectby.cs">
+    <Compile Include="Frmselectbygrade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frmselectby.Designer.cs">
-      <DependentUpon>Frmselectby.cs</DependentUpon>
+    <Compile Include="Frmselectbygrade.Designer.cs">
+      <DependentUpon>Frmselectbygrade.cs</DependentUpon>
     </Compile>
     <Compile Include="Frmstulist.cs">
       <SubType>Form</SubType>
@@ -94,6 +100,9 @@
     <EmbeddedResource Include="Frmaboutours.resx">
       <DependentUpon>Frmaboutours.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frmaddresult.resx">
+      <DependentUpon>Frmaddresult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAddstu.resx">
       <DependentUpon>FrmAddstu.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frmmain.resx">
       <DependentUpon>Frmmain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmselectbygrade.resx">
+      <DependentUpon>Frmselectbygrade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frmstulist.resx">
       <DependentUpon>Frmstulist.cs</DependentUpon>
